@@ -65,6 +65,9 @@ class User(AbstractBaseUser, PermissionsMixin):
     stack = models.TextField(null=True, blank=True, verbose_name="Стэк")
     number_test_scores = models.PositiveIntegerField(null=True, blank=True, default=0, verbose_name="Количество баллов за тесты")
     achievements = None
+    fuels = models.PositiveIntegerField(default=0, verbose_name="Топливо")
+    rockets = models.PositiveIntegerField(default=0, verbose_name="Модули ракеты")
+    humans = models.PositiveIntegerField(default=0, verbose_name="Экипаж")
     is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)

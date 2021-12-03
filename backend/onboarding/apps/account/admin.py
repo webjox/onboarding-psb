@@ -10,14 +10,16 @@ class UserAdmin(DjangoUserAdmin):
     list_filter = ("is_active", "is_staff", "is_superuser")
     fieldsets = (
         (None, {'fields': ('username', 'password')}),
-        ('Персональная информания', {'fields': ('name', 'post', 'role_in_team', 'team', "description",  "photo", "stack", "number_test_scores")}),
+        ('Персональная информания', {'fields': ('name', 'fuels', 'rockets', 'post', 'role_in_team', 'team', "description",  "photo", "stack", "number_test_scores")}),
         ('Права доступа', {'fields': ('is_active', 'is_staff', 'is_superuser')}),)
     add_fieldsets = (
         (None, {
             'classes': ('wide',),
             'fields': (
                 'username', 
-                'name',  
+                'name',
+                'fuels',
+                'rockets',  
                 'post', 
                 'role_in_team', 
                 'team',

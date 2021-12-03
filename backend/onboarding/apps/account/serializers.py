@@ -11,6 +11,8 @@ class UserSerializer(serializers.ModelSerializer):
             "name",
             "username",
             "team",
+            'fuels',
+            'rockets',
             "post",
             "role_in_team",
             "description",

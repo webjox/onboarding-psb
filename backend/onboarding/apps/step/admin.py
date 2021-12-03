@@ -2,7 +2,7 @@ from django.contrib import admin
 from django import forms
 from ckeditor.widgets import CKEditorWidget
 from django.db.models import fields
-from .models import Step
+from .models import Step, PasssedUserStep
 
 class PostAdminForm(forms.ModelForm):
     training_data = forms.CharField(widget=CKEditorWidget(), help_text="Данные для обучения", required=False)
@@ -14,3 +14,4 @@ class StepAdmin(admin.ModelAdmin):
     form = PostAdminForm
 
 admin.site.register(Step, StepAdmin)
+admin.site.register(PasssedUserStep)

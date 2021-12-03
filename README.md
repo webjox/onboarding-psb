@@ -220,6 +220,16 @@ nvm install 16
 npm i
 ~~~
 
+## 4. Установка менеджера процессов
+~~~
+npm install pm2 -g
+~~~
+
+## 5. Билд проекта
+~~~
+npm run build
+~~~
+
 <h1 align="center">ЗАПУСК ПРОЕКТА</h1>
 ### Установка зависимостей проекта
 
@@ -229,8 +239,47 @@ Backend части
 gunicorn -b 0.0.0.0:8000 onboarding.wsgi:application --daemon
 ~~~
 
-Frontend части
+Frontend части в тестовом режиме
 ------------
 ~~~
 npm run start
+~~~
+
+Frontend части в боевом режиме
+------------
+~~~
+pm2 start npm --name "Frontend" -- start
+~~~
+
+
+Настройка nginx
+в папке /etc/nginx/sites-available нужно создать конфиг nginx с расширением .conf, пример: "site.conf"
+
+В него прописать:
+
+Где ip - это ip вашего сервера
+~~~
+server {
+        listen 80;
+        server_name ip;
+        root /home/onboarding-psb/frontend/build;
+        location / {
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_set_header X-Forwarded-Proto $scheme;
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_pass http://localhost:3000;
+        }
+
+        index index.html index.htm;
+}
+~~~
+
+После чего нужно создать ссылку на файл в папке /etc/nginx/sites-enabled
+
+Для этого пропишите данную команду:
+
+site.conf - конфиг файл
+
+~~~
+ln -s /etc/nginx/sites-available/site.conf /etc/nginx/sites-enabled/site.conf
 ~~~
