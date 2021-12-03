@@ -1,0 +1,17 @@
+@keyframes start {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-2000px);
+    }
+}
+
+@keyframes fire {
+    0% {
+        height: 0px;
+    }
+    100% {
+        height: 400px;
+    }
+}

@@ -50,6 +50,7 @@ sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get install nginx
 sudo apt-get install git
+
 sudo apt -y install vim bash-completion wget
 
 wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
@@ -171,10 +172,24 @@ cd onboarding/
 python manage.py migrate
 ~~~
 
+Создание суперпользователя
+------------
+Для создания суперпользователя пропишите: 
+~~~
+python manage.py createsuperuser
+~~~
+
 Устновка HTTP сервера для запуска backend части
 ------------
 ~~~
-УСТАНОВКА
+sudo apt install gunicorn
+gunicorn -b 0.0.0.0:8000 onboarding.wsgi:application --daemon
+~~~
+
+Соберем статику для админки
+------------
+~~~
+python manage.py collectstatic
 ~~~
 
 <h2 align="center">Frontend</h2>
