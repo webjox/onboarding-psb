@@ -63,7 +63,7 @@ class User(AbstractBaseUser, PermissionsMixin):
         verbose_name="Фото",
     )
     stack = models.TextField(null=True, blank=True, verbose_name="Стэк")
-    number_test_scores = models.PositiveIntegerField(null=True, blank=True, verbose_name="Количество баллов за тесты")
+    number_test_scores = models.PositiveIntegerField(null=True, blank=True, default=0, verbose_name="Количество баллов за тесты")
     achievements = None
     is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=False)
