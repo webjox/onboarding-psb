@@ -4,7 +4,7 @@ import { getRefreshToken, getToken, removeTokens } from "./useTokens";
 
 const instance = axios.create({});
 
-const url = "http://192.168.0.39:8000";
+const url = "http://185.185.70.188:8000";
 let errorRequests = [];
 let refresh = false;
 

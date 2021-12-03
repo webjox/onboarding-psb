@@ -183,7 +183,6 @@ python manage.py createsuperuser
 ------------
 ~~~
 sudo apt install gunicorn
-gunicorn -b 0.0.0.0:8000 onboarding.wsgi:application --daemon
 ~~~
 
 Соберем статику для админки
@@ -195,12 +194,43 @@ python manage.py collectstatic
 <h2 align="center">Frontend</h2>
 
 
+
+## 1. Установка nvm
 ~~~
-ЧТО ТО, ЧТО ТО
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
 ~~~
 
+~~~
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")" [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+~~~
+
+~~~
+source ~/.bashrc
+~~~
+
+## 2. Установка node.js
+~~~
+nvm install 16
+~~~
+
+## 3. Установка зависимостей
+
+в папке /onboarding-psb/frontend пропишите
+~~~
+npm i
+~~~
 
 <h1 align="center">ЗАПУСК ПРОЕКТА</h1>
 ### Установка зависимостей проекта
 
+Backend части
+------------
+~~~
+gunicorn -b 0.0.0.0:8000 onboarding.wsgi:application --daemon
+~~~
 
+Frontend части
+------------
+~~~
+npm run start
+~~~
