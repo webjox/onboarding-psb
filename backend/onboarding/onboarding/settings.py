@@ -29,7 +29,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0', '192.168.0.39', '192.168.0.57']
+ALLOWED_HOSTS = ['0.0.0.0', '192.168.0.39', '192.168.0.57', '185.185.70.188']
 
 VERSION_API = 'v1'
 
@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'django_filters',
     'ckeditor',
     'django_better_admin_arrayfield',
-    
+
     'apps.account',
     'apps.team',
     'apps.documentation_reference',
