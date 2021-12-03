@@ -49,7 +49,7 @@
 sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get install nginx
-
+sudo apt-get install git
 sudo apt -y install vim bash-completion wget
 
 wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
@@ -104,9 +104,16 @@ git clone https://github.com/webjox/onboarding-psb.git
 Установка python3.8
 ------------
 ~~~
-sudo apt install software-properties-common
-sudo add-apt-repository ppa:deadsnakes/ppa
-sudo apt install python3.8
+sudo apt update
+sudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev wget
+wget https://www.python.org/ftp/python/3.8.0/Python-3.8.0.tgz
+tar -xf Python-3.8.0.tgz
+cd Python-3.8.0
+./configure --enable-optimizations
+make -j 8
+sudo make altinstall
+
+sudo apt install python3-dev
 ~~~
 
 Проверка версии python
@@ -124,6 +131,8 @@ sudo apt  install virtualenv
 Установка зависимостей
 ------------
 ~~~
+cd onboarding-psb/
+
 cd backend/
 
 virtualenv --python=python3.8 venv
@@ -158,6 +167,7 @@ POSTGRES_PASSWORD - пароль от пользователя
 ------------
 Для заполнения базы данных системной информацией выполните в корневой папке backend/: 
 ~~~
+cd onboarding/
 python manage.py migrate
 ~~~
 
