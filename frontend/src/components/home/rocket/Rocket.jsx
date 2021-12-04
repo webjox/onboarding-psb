@@ -12,36 +12,36 @@ const Rocket = ({ start }) => {
         <RocketBody>
             <MyRocket start={start}>
                 <DetailFive
-                    selector={5}
-                    rockets={userInfo.rockets}
+                    // selector={5}
+                    // rockets={userInfo.rockets}
                     src="/rocket/part5.svg"
                     alt=""
                     className=""
                 />
                 <DetailFour
-                    selector={4}
-                    rockets={userInfo.rockets}
+                    // selector={4}
+                    // rockets={userInfo.rockets}
                     src="/rocket/part4.svg"
                     alt=""
                     className=""
                 />
                 <DetailThree
-                    selector={3}
-                    rockets={userInfo.rockets}
+                    // selector={3}
+                    // rockets={userInfo.rockets}
                     src="/rocket/part3.svg"
                     alt=""
                     className=""
                 />
                 <DetailTwo
-                    selector={2}
-                    rockets={userInfo.rockets}
+                    // selector={2}
+                    // rockets={userInfo.rockets}
                     src="/rocket/part2.svg"
                     alt=""
                     className=""
                 />
                 <DetailOne
-                    selector={1}
-                    rockets={userInfo.rockets}
+                    // selector={1}
+                    // rockets={userInfo.rockets}
                     src="/rocket/part1.svg"
                     alt=""
                     className=""
@@ -59,26 +59,26 @@ const DetailOne = styled.img`
     margin-left: 10px;
     margin-top: -18px;
     z-index: 5;
-    opacity: ${(props) => (props.selector < props.rockets ? "1" : "0.5")};
+    /* opacity: ${(props) => (props.selector < props.rockets ? "1" : "0.5")}; */
 `;
 const DetailTwo = styled.img`
     margin-top: -3px;
     z-index: 4;
-    opacity: ${(props) => (props.selector < props.rockets ? "1" : "0.5")};
+    /* opacity: ${(props) => (props.selector < props.rockets ? "1" : "0.5")}; */
 `;
 const DetailThree = styled.img`
     margin-top: -3px;
     z-index: 3;
-    opacity: ${(props) => (props.selector < props.rockets ? "1" : "0.5")};
+    /* opacity: ${(props) => (props.selector < props.rockets ? "1" : "0.5")}; */
 `;
 const DetailFour = styled.img`
     margin-top: -3px;
     z-index: 2;
-    opacity: ${(props) => (props.selector < props.rockets ? "1" : "0.5")};
+    /* opacity: ${(props) => (props.selector < props.rockets ? "1" : "0.5")}; */
 `;
 const DetailFive = styled.img`
     z-index: 1;
-    opacity: ${(props) => (props.selector < props.rockets ? "1" : "0.5")};
+    /* opacity: ${(props) => (props.selector < props.rockets ? "1" : "0.5")}; */
 `;
 const DetailPlatform = styled.img`
     margin-top: -28px;

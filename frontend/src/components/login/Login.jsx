@@ -109,4 +109,7 @@ const Button = styled(ButtonCtr)`
     background-color: #d23f00;
     width: 94px;
     height: 48px;
+    &:hover {
+        background-color: #ad3400;
+    }
 `;

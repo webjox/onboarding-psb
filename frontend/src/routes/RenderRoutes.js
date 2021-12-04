@@ -27,7 +27,7 @@ const RenderRoutes = ({ basePath = "", routes }) => {
             ) : (
                 ""
             )}
-            {/* <Redirect to={{ pathname: "/login" }} /> */}
+            <Redirect to={{ pathname: "/login" }} />
         </>
     ));
 };

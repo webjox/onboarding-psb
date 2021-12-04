@@ -6,7 +6,7 @@ import { Store } from "../../../../App";
 const Resources = ({ open, setStart }) => {
     return (
         <ResourcesBody open={open}>
-            <Flex>
+            {/* <Flex>
                 <Text>Топливо</Text>
                 <Percentages>100%</Percentages>
             </Flex>
@@ -18,7 +18,6 @@ const Resources = ({ open, setStart }) => {
                 <Percentages>100%</Percentages>
             </Flex>
             <Flex>
-                {/* <Icon src="/rocket/human.svg" alt="" className="" />
                 <Icon src="/rocket/human.svg" alt="" className="" />
                 <Icon src="/rocket/human.svg" alt="" className="" />
                 <Icon src="/rocket/human.svg" alt="" className="" />
@@ -32,14 +31,11 @@ const Resources = ({ open, setStart }) => {
                 <Icon src="/rocket/human.svg" alt="" className="" />
                 <Icon src="/rocket/human.svg" alt="" className="" />
                 <Icon src="/rocket/human.svg" alt="" className="" />
-                <Icon src="/rocket/human.svg" alt="" className="" /> */}
-            </Flex>
+                <Icon src="/rocket/human.svg" alt="" className="" />
+                <Icon src="/rocket/human.svg" alt="" className="" />
+            </Flex> */}
             {open ? (
-                <Button
-                    сlassName="contact__btn"
-                    onClick={() => setStart(true)}
-                    label="Стартуем!"
-                />
+                <Button onClick={() => setStart(true)} label="Стартуем!" />
             ) : (
                 ""
             )}

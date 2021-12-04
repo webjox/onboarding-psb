@@ -45,12 +45,12 @@ const RocketBlockBody = styled.div`
 `;
 
 const Button = styled.button`
-    /* background-color: transparent;
+    background-color: transparent;
     color: white;
     transition: 0.7s;
     border: 1px solid white;
-    padding: 12px 24px;
-    border-radius: 4px; */
+    padding: 2px 20px;
+    border-radius: 4px;
 `;
 
 const Icon = styled(IconArrowLeft)`
