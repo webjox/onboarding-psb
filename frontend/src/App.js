@@ -16,7 +16,7 @@ function App() {
     const [state, setState] = useState({
         isAuth: false,
         loading: true,
-        userInfo: null,
+        userInfo: "",
         setTokens: (tokens) => {
             setState((prevstate) => {
                 return {
@@ -40,7 +40,7 @@ function App() {
             }
             try {
                 const response = await request({
-                    entityName: "user/me",
+                    entityName: "me",
                     method: "get",
                 });
                 await setState((prevstate) => {
@@ -71,6 +71,7 @@ function App() {
         const getUserData = async () => {
             await state.getUserData();
         };
+        getUserData();
     }, [state.tokens]);
     return (
         <Store.Provider value={state}>

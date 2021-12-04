@@ -29,6 +29,8 @@ class Step(models.Model):
         )
     drag_and_drop = models.BooleanField(default=False, verbose_name="Прикрепление файлов")
     map = models.BooleanField(default=False, verbose_name="Карта")
+    is_passed = models.BooleanField(default=False, verbose_name="Пройден")
+    
     class Meta:
         verbose_name = "Шаг"
         verbose_name_plural = "Шаги"

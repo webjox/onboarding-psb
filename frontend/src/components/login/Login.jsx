@@ -13,13 +13,6 @@ const Login = () => {
     const [username, setUsername] = useState("vovababaev");
     const [password, setPassword] = useState("147852369");
 
-    const usernameHandler = (e) => {
-        setUsername(e.value);
-    };
-
-    const passwordHandler = (e) => {
-        setPassword(e.value);
-    };
     async function postUser(data) {
         try {
             const response = await request({

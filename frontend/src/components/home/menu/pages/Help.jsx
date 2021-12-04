@@ -2,8 +2,20 @@ import styled from "@emotion/styled/macro";
 import { TextField } from "@consta/uikit/TextField";
 import { IconSearch } from "@consta/uikit/IconSearch";
 import { Button as ButtonCtr } from "@consta/uikit/Button";
+import { useState } from "react";
+import request from "../../../../request";
 
 const Help = () => {
+    const [search, setSearch] = useState();
+
+    async function getHelp(url) {
+        try {
+            const response = request({
+                entityName: "documentations_reference/?search=JIRA",
+                method: "get",
+            });
+        } catch {}
+    }
     return (
         <div>
             <SubTitle>Поиск документов по ближайшей галактике</SubTitle>

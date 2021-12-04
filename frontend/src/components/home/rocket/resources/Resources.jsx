@@ -1,5 +1,7 @@
 import styled from "@emotion/styled/macro";
 import { Button as ButtonCtr } from "@consta/uikit/Button";
+import { useContext } from "react";
+import { Store } from "../../../../App";
 
 const Resources = ({ open, setStart }) => {
     return (
@@ -10,19 +12,13 @@ const Resources = ({ open, setStart }) => {
             </Flex>
             <Flex>
                 <Icon src="/rocket/oil.svg" alt="" className="" />
-                <Icon src="/rocket/oil.svg" alt="" className="" />
-                <Icon src="/rocket/oil.svg" alt="" className="" />
-                <Icon src="/rocket/oil.svg" alt="" className="" />
-                <Icon src="/rocket/oil.svg" alt="" className="" />
-                <Icon src="/rocket/oil.svg" alt="" className="" />
-                <Icon src="/rocket/oil.svg" alt="" className="" />
-                <Icon src="/rocket/oil.svg" alt="" className="" />
             </Flex>
             <Flex>
                 <Text>Команда</Text>
                 <Percentages>100%</Percentages>
             </Flex>
             <Flex>
+                {/* <Icon src="/rocket/human.svg" alt="" className="" />
                 <Icon src="/rocket/human.svg" alt="" className="" />
                 <Icon src="/rocket/human.svg" alt="" className="" />
                 <Icon src="/rocket/human.svg" alt="" className="" />
@@ -36,11 +32,14 @@ const Resources = ({ open, setStart }) => {
                 <Icon src="/rocket/human.svg" alt="" className="" />
                 <Icon src="/rocket/human.svg" alt="" className="" />
                 <Icon src="/rocket/human.svg" alt="" className="" />
-                <Icon src="/rocket/human.svg" alt="" className="" />
-                <Icon src="/rocket/human.svg" alt="" className="" />
+                <Icon src="/rocket/human.svg" alt="" className="" /> */}
             </Flex>
             {open ? (
-                <Button onClick={() => setStart(true)} label="Стартуем!" />
+                <Button
+                    сlassName="contact__btn"
+                    onClick={() => setStart(true)}
+                    label="Стартуем!"
+                />
             ) : (
                 ""
             )}

@@ -5,12 +5,14 @@ from rest_framework.generics import DestroyAPIView, ListAPIView, GenericAPIView,
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from .serializers import StepSerializers, PasssedUserStepSerializers, OneStepSerializers
 from .models import Step, PasssedUserStep
-
+from django_filters import rest_framework as filters
 
 class ListStep(ListAPIView):
     permission_classes = [AllowAny]
     serializer_class = StepSerializers
     queryset = Step.objects.all()
+    filter_backends = (filters.DjangoFilterBackend,)
+    filterset_fields = ('is_passed',)
 
     
 class DetailStep(RetrieveAPIView):
@@ -24,7 +26,8 @@ class SendAnswer(APIView):
         user = request.user
         id_step = data_req.get("id_step")
         step = Step.objects.filter(pk=id_step).first()
-        
+        step.is_passed = True
+        step.save()
         PasssedUserStep.objects.create(user=user, step=step, score=step.test.count_score_success if step.test is not None else 0)
         type_award = step.award
         if type_award == "rocket":
